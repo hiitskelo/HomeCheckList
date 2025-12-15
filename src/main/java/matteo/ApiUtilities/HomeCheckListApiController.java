@@ -12,16 +12,17 @@ import java.util.Optional;
 @RequestMapping("/home/")
 public class HomeCheckListApiController {
 
+    final static HomeCheckListApiConsumer homeChecklist = new HomeCheckListApiConsumer();
+
     @GetMapping
     public ResponseEntity<String> testApi() {
         return ResponseEntity.ok("OK");
     }
 
     @GetMapping("/today")
-    public ResponseEntity<ReqResponseModel> getTodaysRecap(){
-        ReqResponseModel responseModel = null;
-
-        return ResponseEntity.of(Optional.of(responseModel));
+    public ResponseEntity<String> getTodaysRecap(){
+        ReqResponseModel responseModel = homeChecklist.getTodayRecap();
+        return ResponseEntity.of(Optional.of(responseModel.getResponseBody()));
     }
 
 }

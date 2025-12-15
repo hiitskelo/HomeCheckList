@@ -1,5 +1,9 @@
 package matteo.Entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public abstract class ReqResponseModel {
     private String request;
     private String exitCode;

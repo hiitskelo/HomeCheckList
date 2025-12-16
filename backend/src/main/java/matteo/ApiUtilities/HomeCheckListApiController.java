@@ -1,6 +1,7 @@
 package matteo.ApiUtilities;
 
 import matteo.Entities.ReqResponseModel;
+import matteo.basics.ResponseUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class HomeCheckListApiController {
     @GetMapping("/today")
     public ResponseEntity<String> getTodaysRecap(){
         ReqResponseModel responseModel = homeChecklist.getTodayRecap();
-        return ResponseEntity.of(Optional.of(responseModel.getResponseBody()));
+        return ResponseEntity.of(Optional.of(ResponseUtils.toJson(responseModel)));
     }
 
 }

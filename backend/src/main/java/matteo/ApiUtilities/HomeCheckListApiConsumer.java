@@ -6,6 +6,7 @@ import matteo.Entities.EventCategory;
 import matteo.Entities.ReqResponseModel;
 import matteo.Entities.TodayResponse;
 import matteo.basics.BasicConsumer;
+import matteo.basics.ResponseUtils;
 import org.bson.Document;
 
 import java.time.LocalDate;
@@ -24,7 +25,7 @@ public class HomeCheckListApiConsumer extends BasicConsumer {
             c.setEventName(d.get("eventName", String.class));
             today.getEvents().add(c);
         }
-        today.setResponseBody(today.getEvents().toString());
+        today.setResponseBody(ResponseUtils.toJson(today.getEvents()));
         return today;
     }
 }

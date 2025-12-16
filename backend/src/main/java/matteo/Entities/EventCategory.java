@@ -3,7 +3,7 @@ package matteo.Entities;
 public enum EventCategory {
 
     LAUNDRY,
-    GROCEIRES,
+    GROCERIES,
     UNIVERISTY_YULIIA;
 
 }
